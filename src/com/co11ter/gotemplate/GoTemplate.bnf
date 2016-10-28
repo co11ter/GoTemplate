@@ -1,0 +1,20 @@
+{
+  parserClass="com.co11ter.gotemplate.parser.GoTemplateParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="GoTemplate"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.co11ter.gotemplate.psi"
+  psiImplPackage="com.co11ter.gotemplate.psi.impl"
+
+  elementTypeHolderClass="com.co11ter.gotemplate.psi.GoTemplateTypes"
+  elementTypeClass="com.co11ter.gotemplate.psi.GoTemplateElementType"
+  tokenTypeClass="com.co11ter.gotemplate.psi.GoTemplateTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= LEFT_DELIMITER EXPRESSION+ RIGHT_DELIMITER

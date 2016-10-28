@@ -1,19 +1,12 @@
 <idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>com.co11ter.gotemplate</id>
+  <name>GoTemplate</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor url="https://github.com/co11ter">co11ter/GoTemplate</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      go/template support
     ]]></description>
-
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
-  </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="141.0"/>
@@ -25,7 +18,8 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <fileTypeFactory implementation="com.co11ter.gotemplate.GoTemplateFileTypeFactory" />
+    <lang.parserDefinition language="GoTemplate" implementationClass="com.co11ter.gotemplate.GoTemplateParserDefinition" />
   </extensions>
 
   <actions>
